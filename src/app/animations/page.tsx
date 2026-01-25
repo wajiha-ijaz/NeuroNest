@@ -6,23 +6,6 @@ export default function TeenGamesPage() {
     // Main Container centered with exact 1440px width
     <div className="w-[1440px] h-[1400px] mx-auto min-h-screen bg-white font-sans flex flex-col items-center">
       
-      {/* 1. TOP ORANGE NAV BAR - Fixed 1440x119 */}
-      <nav className="w-[1440px] h-[60px] bg-[#F6A572] flex justify-between items-center px-20 shadow-sm">
-        <div className="flex items-center gap-3">
-          <div className="w-16 h-16 bg-white/40 rounded-full border-2 border-white" />
-          <span className="font-playpen font-bold text-[30px] text-black ml-[100px]">NeuroNest</span>
-        </div>
-
-
-       <div className="w-[600px] flex justify-between text-white font-playpen font-bold uppercase text-lg tracking-widest text-[20px]">
-  <a className="hover:text-black transition-colors">Home</a>
-  <a className="hover:text-black transition-colors">Assessment</a>
-  <a className="hover:text-black transition-colors">Activities</a>
-  <a className="hover:text-black transition-colors">Dashboard</a>
-</div>
-
-        <div className="w-16 h-16 bg-white/40 rounded-full border-2 border-white" />
-      </nav>
 
       {/* 2. TEXT BELOW NAV */}
       <header className="text-center pt-12 pb-10 mr-[150px] m-[35px]">
