@@ -50,18 +50,18 @@ export default function HomePage() {
                 Age-appropriate games and tools for all developmental stages.
               </p>
             </div>
-{/* Link to Kids Page */}
+            {/* Link to Kids Page */}
           <Link href="/kids" className="no-underline">
             <button className="bg-[#00AD42] hover:bg-[#008f37] text-[#f8f7f6] font-bold w-[350px] h-[50px] rounded-[30px] flex items-center justify-center text-[20px] uppercase tracking-widest transition-all shadow-lg active:scale-95 mb-[30px]">
-              View Progress
+              Explore Activities
             </button>
           </Link>
         </div> {/* Closes Card 1 */}
 
         {/* Card 2 */}
-        <div className="mt-[70px] w-[450px] h-[600px] bg-[#F2D75D] rounded-[30px] p-10 flex flex-col items-center text-center shadow-[0px_10px_30px_rgba(0,0,0,0.05)]">
+        <div className="mt-[70px] w-[450px] h-[600px] bg-[#AFF695] rounded-[30px] p-10 flex flex-col items-center text-center shadow-[0px_10px_30px_rgba(0,0,0,0.05)]">
           <div className="mt-[40px] w-[300px] h-[300px] bg-white rounded-full relative mb-8 overflow-hidden flex items-center justify-center border border-gray-100 flex-shrink-0">
-            <Image src="/progress.png" alt="Icon" width={350} height={350} className="object-contain" />
+            <Image src="/123.png" alt="Icon" width={350} height={350} className="object-contain" />
           </div>
 
           <div className="flex flex-col items-center justify-center flex-grow">

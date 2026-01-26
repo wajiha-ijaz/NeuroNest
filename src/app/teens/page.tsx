@@ -22,23 +22,29 @@ export default function TeenGamesPage() {
       <section className="flex justify-center mb-16">
         <div className="flex items-center justify-between px-6 bg-white border-[3px] border-gray-300 rounded-[55px] w-[900px] h-[90px] shadow-[0px_4px_10px_rgba(0,0,0,0.1)] mr-[170px] m-[30px]">
           
-          {/* Kids Button (218x83) - Active State */}
-          <button className="ml-[30px] w-[218px] h-[65px] bg-transparent text-gray-500 font-bold text-[22px] rounded-[40px] hover:text-black hover:bg-gray-50 transition-all flex items-center justify-center">
-            Kids (3-12)
-          </button>
-          
-          {/* Teens Button (218x83) */}
-          <button className="w-[218px] h-[65px] bg-[#87D1FF] text-black font-bold text-[22px] rounded-[40px] shadow-[0px_4px_8px_rgba(0,0,0,0.15)] transition-all flex items-center justify-center">
-            Teens (13-17)
-          </button>
-          
-          {/* Adults Button (218x83) */}
-          <button className="mr-[30px] w-[218px] h-[65px] bg-transparent text-gray-500 font-bold text-[22px] rounded-[40px] hover:text-black hover:bg-gray-50 transition-all flex items-center justify-center">
-            Adults (18+)
-          </button>
-          
-        </div>
-      </section>
+         {/* Kids Button - Links to Kids Games */}
+    <Link href="/kids" className="no-underline">
+      <button className="ml-[30px] w-[218px] h-[65px] bg-transparent text-gray-500 font-bold text-[22px] rounded-[40px] hover:text-black hover:bg-gray-50 transition-all flex items-center justify-center">
+        Kids (3-12)
+      </button>
+    </Link>
+    
+    {/* Teens Button - Links to Teen Games (Active State) */}
+    <Link href="/teens" className="no-underline">
+      <button className="w-[218px] h-[65px] bg-[#87D1FF] text-black font-bold text-[22px] rounded-[40px] shadow-[0px_4px_8px_rgba(0,0,0,0.15)] transition-all flex items-center justify-center">
+        Teens (13-17)
+      </button>
+    </Link>
+    
+    {/* Adults Button - Blank link for now */}
+    <Link href="#" className="no-underline">
+      <button className="mr-[30px] w-[218px] h-[65px] bg-transparent text-gray-500 font-bold text-[22px] rounded-[40px] hover:text-black hover:bg-gray-50 transition-all flex items-center justify-center">
+        Adults (18+)
+      </button>
+    </Link>
+    
+  </div>
+</section>
 
       {/* 4. GAME GRID - Balanced and Centered */}
   <main className="flex justify-center gap-[30px] pb-24 mr-[110px]">
@@ -98,6 +104,7 @@ export default function TeenGamesPage() {
       </div>
       
       {/* Updated Button Section */}
+      <Link href="/teengames" className="no-underline">
       <button 
         className={`
           ${btnColor} 
@@ -116,6 +123,7 @@ export default function TeenGamesPage() {
       >
         PLAY NOW
       </button>
+      </Link>
     </article>
   );
 }

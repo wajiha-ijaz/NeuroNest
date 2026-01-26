@@ -46,6 +46,8 @@ export default function TeenGamesPage() {
 
       </main>
 
+      
+
       {/* 5. BOTTOM ORANGE BAR */}
       <footer className="bg-[#F6A572] w-full h-[150px] mt-auto" />
     </div>
