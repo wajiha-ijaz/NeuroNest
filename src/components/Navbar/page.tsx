@@ -31,12 +31,11 @@ export default function Navbar() {
           <span className="font-playpen font-bold text-[30px] text-black mr-[100px]">NeuroNest</span>
         </div>
 
-       <div className="w-[600px] flex justify-between text-white font-roboto font-bold uppercase text-lg tracking-widest text-[20px]">
-  <a className="hover:text-black transition-colors">Home</a>
-  <a className="hover:text-black transition-colors">Assessment</a>
-  <a className="hover:text-black transition-colors">Activities</a>
-  <a className="hover:text-black transition-colors">Dashboard</a>
-</div>
+        <div className="w-[500px] flex justify-between font-roboto font-bold uppercase text-lg tracking-widest text-[20px]">
+          <Link href="/home" className="no-underline text-[#000000] px-4 py-2 rounded hover:text-white transition-colors">Home</Link>
+          <Link href="/kids" className="no-underline text-[#000000] px-4 py-2 rounded hover:text-white transition-colors">Activities</Link>
+          <Link href="/dashboard" className="no-underline text-[#000000] px-4 py-2 rounded hover:text-white transition-colors">Dashboard</Link>
+        </div>
 
         <div className="w-16 h-16 bg-white/40 rounded-full border-2 border-white" />
       </nav>

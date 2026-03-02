@@ -33,6 +33,7 @@ export default function TeenGamesPage() {
           imageSrc="/social-sense.png" 
           bgColor="bg-[#E8F5E9]" 
           btnColor="bg-[#AFE879]"
+          href="#"
         />
 
         {/* Card 2 */}
@@ -42,6 +43,7 @@ export default function TeenGamesPage() {
           imageSrc="/tower.png" 
           bgColor="bg-[#E1F5FE]" 
           btnColor="bg-[#40BCFF]"
+          href="#"
         />
 
       </main>
@@ -54,7 +56,7 @@ export default function TeenGamesPage() {
   );
 }
 
-function GameCard({ title, description, imageSrc, bgColor, btnColor }: any) {
+function GameCard({ title, description, imageSrc, bgColor, btnColor, href }: any) {
   return (
     // Card Box: Exact 538x734
     <article className={`${bgColor} w-[500px] h-[650px] rounded-[48px] p-12 shadow-[12px_12px_0px_0px_rgba(0,0,0,0.15)] border border-white/40 flex flex-col items-center text-center transition-all hover:-translate-y-2 -mt-[35px]`}>
@@ -81,23 +83,25 @@ function GameCard({ title, description, imageSrc, bgColor, btnColor }: any) {
       </p>
       
       {/* Updated Button Section */}
-      <button 
-        className={`
-          ${btnColor} 
-          hover:bg-[#B45309] 
-          text-[#f8f7f6] 
-          font-bold
-          w-[420px] h-[50px] 
-          rounded-[30px]
-          flex items-center justify-center
-          text-2xl uppercase tracking-widest 
-          border-none transition-all duration-300 
-          shadow-lg hover:shadow-xl active:scale-95
-          mb-[30px]
-        `}
-      >
-        PLAY NOW
-      </button>
+      <Link href={href || '#'}>
+        <button 
+          className={`
+            ${btnColor} 
+            hover:bg-[#B45309] 
+            text-[#f8f7f6] 
+            font-bold
+            w-[420px] h-[50px] 
+            rounded-[30px]
+            flex items-center justify-center
+            text-2xl uppercase tracking-widest 
+            border-none transition-all duration-300 
+            shadow-lg hover:shadow-xl active:scale-95
+            mb-[30px]
+          `}
+        >
+          PLAY NOW
+        </button>
+      </Link>
     </article>
   );
 }
