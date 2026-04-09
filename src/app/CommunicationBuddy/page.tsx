@@ -222,7 +222,7 @@ export default function CommunicationBuddyPage() {
   onClick={handleFreeTalkSend}
   disabled={(!isFreeTalk && activeScenario !== null) || !userInput.trim()}
   className={`
-    ml-[10px] h-[32px] px-10 rounded-full font-bold text-sm shadow-sm border-b-2 transition-all
+    ml-[10px] h-[30px] w-[70px] rounded-lg font-bold text-base shadow-sm border-b-2 transition-all
     bg-[#AFE879] border-[#8bc454] text-black
     ${(!isFreeTalk && activeScenario !== null) || !userInput.trim() 
       ? "cursor-not-allowed opacity-100" 
@@ -246,7 +246,7 @@ export default function CommunicationBuddyPage() {
                   <button
                     key={i}
                     onClick={() => handleChoice(opt)}
-                    className="px-8 py-4 bg-white border-2 border-[#BDB2FF] rounded-2xl text-[14px] font-bold text-slate-700 hover:bg-[#F5F3FF] hover:border-[#60A5FA] hover:shadow-md transition-all active:scale-95 shadow-sm min-w-[180px]"
+                    className="w-full max-w-[550px] px-6 py-5 bg-white border-2 border-[#BDB2FF] rounded-xl text-[16px] font-bold text-slate-700 hover:bg-[#F5F3FF] hover:border-[#60A5FA] hover:shadow-lg transition-all active:scale-95 shadow-md"
                   >
                     {opt.text}
                   </button>
@@ -270,7 +270,7 @@ export default function CommunicationBuddyPage() {
             {!isFreeTalk && activeScenario && (
               <button 
                 onClick={() => setActiveScenario(null)}
-                className="mt-[5px] text-[12px] text-gray-400 hover:text-red-400 uppercase tracking-tighter"
+                className="mt-[15px] px-8 py-2.5 bg-red-100 hover:bg-red-200 text-red-600 hover:text-red-700 font-bold text-sm rounded-lg border-2 border-red-300 transition-all active:scale-95 shadow-sm"
               >
                 Exit Activity
               </button>

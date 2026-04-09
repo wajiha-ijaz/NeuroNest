@@ -16,9 +16,10 @@ export default function TeenGamesPage() {
           Choose activities based on age group and developmental needs.
         </p>
       </header>
+      
 {/* 3. SEGMENTED TOGGLE BAR (Figma Exact: 811x111) */}
 <section className="flex justify-center mb-16">
-  <div className="flex items-center justify-between px-6 bg-white border-[3px] border-gray-300 rounded-[55px] w-[900px] h-[90px] shadow-[0px_4px_10px_rgba(0,0,0,0.1)] mr-[170px] m-[30px]">
+  <div className="flex items-center justify-between px-6 bg-white border-[3px] border-gray-300 rounded-[55px] w-[800px] h-[90px] shadow-[0px_4px_10px_rgba(0,0,0,0.1)] mr-[170px] m-[30px]">
     
     {/* Kids Button - Links to /kids-games */}
     <Link href="/kids" className="no-underline">

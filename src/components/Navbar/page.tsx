@@ -12,10 +12,10 @@ export default function Navbar() {
   if (hideNavbarOn.includes(pathname)) return null;
 
   return (
-    <nav className="w-[1440px] h-[70px] bg-[#F6A572] flex justify-between items-center px-4 shadow-sm mx-auto relative">
+    <nav className="w-full bg-[#F6A572] flex justify-between items-center px-4 md:px-8 lg:px-12 py-3 shadow-md">
       
       {/* LEFT CIRCLE: Positioned away from the corner with ml-6 */}
-      <div className="w-[60px] h-[60px] ml-6 bg-white/40 rounded-full border-2 border-white relative overflow-hidden flex-shrink-0 ml-[10px]">
+      <div className="w-[40px] h-[40px] ml-6 bg-white/40 rounded-full border-2 border-white relative overflow-hidden flex-shrink-0 ml-[10px]">
         <Image 
           src="/download.jpg" 
           alt="NeuroNest Logo Icon" 
@@ -25,7 +25,7 @@ export default function Navbar() {
       </div>
 
 {/* 1. TOP ORANGE NAV BAR - Fixed 1440x119 */}
-      <nav className="w-[1440px] h-[60px] bg-[#F6A572] flex justify-between items-center px-20 shadow-sm">
+      <nav className="w-[1440px] h-[50px] bg-[#F6A572] flex justify-between items-center px-20 shadow-sm">
         <div className="flex items-center ">
         
           <span className="font-playpen font-bold text-[30px] text-black mr-[100px]">NeuroNest</span>

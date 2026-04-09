@@ -29,20 +29,22 @@ export default function TeenGamesPage() {
         
         {/* Card 1 */}
         <GameCard 
-          title="Hand Washing"
-          description="Decision making game to help teens understand real life social situations."
-          imageSrc="/kidd.png" 
-          bgColor="bg-[#E8F5E9]" 
-          btnColor="bg-[#AFE879]"
+          title="Dress up"
+          description="Follow step-by-step guidance to put on clothes in the right order and develop independence."
+          imageSrc="/boy.jpeg" 
+          bgColor="bg-[#FFFDE7]" 
+          btnColor="bg-[#FFD54F]"
+          href="/animation1"
         />
 
         {/* Card 2 */}
         <GameCard 
           title="Teeth Brushing"
           description="Classic game designed to improve problem solving and planning skills."
-          imageSrc="/kid.png" 
+          imageSrc="/girll.jpeg" 
           bgColor="bg-[#E1F5FE]" 
           btnColor="bg-[#40BCFF]"
+          href="/animation2"
         />
 
       </main>
@@ -53,13 +55,13 @@ export default function TeenGamesPage() {
   );
 }
 
-function GameCard({ title, description, imageSrc, bgColor, btnColor }: any) {
+function GameCard({ title, description, imageSrc, bgColor, btnColor, href }: any) {
   return (
     // Card Box: Exact 538x734
     <article className={`${bgColor} w-[450px] h-[550px] rounded-[48px] p-12 shadow-[12px_12px_0px_0px_rgba(0,0,0,0.15)] border border-white/40 flex flex-col items-center text-center transition-all hover:-translate-y-2 -mt-[70px]`}>
       
       {/* White Image Container */}
-      <div className="bg-white w-[350px] h-[350px] rounded-[36px] mb-8 flex items-center justify-center relative overflow-hidden p-10 shadow-inner m-[39px]">
+      <div className="bg-white w-[350px] h-[350px] rounded-[36px] mb-8 flex items-center justify-center relative overflow-hidden shadow-inner m-[39px]">
         <div className="relative w-full h-full">
           <Image 
             src={imageSrc} 
@@ -80,7 +82,8 @@ function GameCard({ title, description, imageSrc, bgColor, btnColor }: any) {
       </p>
       
       {/* Updated Button Section */}
-      <button 
+        <Link href={href || '/'} className="no-underline">
+        <button 
         className={`
           ${btnColor} 
           hover:bg-[#B45309] 
@@ -94,10 +97,12 @@ function GameCard({ title, description, imageSrc, bgColor, btnColor }: any) {
           shadow-lg hover:shadow-xl active:scale-95
           mb-[30px]
           mt-[10px]
+          
         `}
       >
         PRACTICE NOW
-      </button>
+        </button>
+      </Link>
     </article>
   );
 }

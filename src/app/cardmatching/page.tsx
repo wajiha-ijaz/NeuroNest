@@ -3,20 +3,21 @@
 import { useState } from "react";
 import Image from "next/image";
 
-export default function CardMatchingPage() {
+export default function SpeechFunPage() {
   // State to toggle between the preview UI and the actual game
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
     <div className="w-[1440px] h-[1000px] mx-auto bg-white flex flex-col items-center">
       
-      {/* 1. WELCOME HEADER */}
+    
+ {/* 1. WELCOME HEADER */}
       <section className="text-center py-12">
         <h1 className="mr-[75px] mt-[38px] text-[40px] font-extrabold text-black font-playpen leading-tight">
-          Welcome To Memory Match
+            Welcome To Memory Match
         </h1>
         <p className="mr-[75px] text-[24px] text-gray-500 font-medium font-playpen">
-          Learn and improve your memory.
+         Learn and improve your memory.
         </p>
       </section>
 
@@ -26,7 +27,7 @@ export default function CardMatchingPage() {
           TITLE: CARD MATCHING
         </h2>
         <p className="mr-[75px] text-[18px] text-black/80 font-bold font-playpen">
-          Flip the cards and find the matching pairs.
+           Flip the cards and find the matching pairs.
         </p>
       </section>
 
@@ -81,7 +82,7 @@ export default function CardMatchingPage() {
           </>
         )}
       </div>
-
+      
           {/* 4. PLAY BUTTON */}
           <div className="w-full flex justify-center">
             <button 

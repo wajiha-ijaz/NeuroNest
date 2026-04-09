@@ -17,9 +17,10 @@ export default function TeenGamesPage() {
         </p>
       </header>
 
-    {/* 3. SEGMENTED TOGGLE BAR (Figma Exact: 811x111) */}
-      <section className="flex justify-center mb-16">
-        <div className="flex items-center justify-between px-6 bg-white border-[3px] border-gray-300 rounded-[55px] w-[900px] h-[90px] shadow-[0px_4px_10px_rgba(0,0,0,0.1)] mr-[170px] m-[30px]">
+        
+{/* 3. SEGMENTED TOGGLE BAR (Figma Exact: 811x111) */}
+<section className="flex justify-center mb-16">
+  <div className="flex items-center justify-between px-6 bg-white border-[3px] border-gray-300 rounded-[55px] w-[800px] h-[90px] shadow-[0px_4px_10px_rgba(0,0,0,0.1)] mr-[170px] m-[30px]">
           
          {/* Kids Button - Links to Kids Games */}
     <Link href="/kids" className="no-underline">
@@ -30,14 +31,14 @@ export default function TeenGamesPage() {
     
     {/* Teens Button - Links to Teen Games (Active State) */}
     <Link href="/teens" className="no-underline">
-      <button className="w-[218px] h-[65px] bg-[#87D1FF] text-black font-bold text-[22px] rounded-[40px] shadow-[0px_4px_8px_rgba(0,0,0,0.15)] transition-all flex items-center justify-center">
-        Teens (13-17)
+      <button className=" w-[218px] h-[65px] bg-[#87D1FF] text-black font-bold text-[22px] rounded-[40px] shadow-[0px_4px_8px_rgba(0,0,0,0.15)] transition-all flex items-center justify-center">
+        Teens (3-17)
       </button>
     </Link>
     
     {/* Adults Button - Blank link for now */}
     <Link href="/adults" className="no-underline">
-      <button className="mr-[30px] w-[218px] h-[65px] bg-transparent text-gray-500 font-bold text-[22px] rounded-[40px] hover:text-black hover:bg-gray-50 transition-all flex items-center justify-center">
+      <button className="mr-[30px]  w-[218px] h-[65px] bg-transparent text-gray-500 font-bold text-[22px] rounded-[40px] hover:text-black hover:bg-gray-50 transition-all flex items-center justify-center">
         Adults (18+)
       </button>
     </Link>
@@ -70,7 +71,7 @@ export default function TeenGamesPage() {
 
 </main>
             {/* 5. BOTTOM ORANGE BAR */}
-            <footer className="bg-[#F6A572] w-full h-[150px] mt-auto" />
+            <footer className="bg-[#F6A572] w-full h-[120px] mt-auto" />
           </div>
         );
       }
