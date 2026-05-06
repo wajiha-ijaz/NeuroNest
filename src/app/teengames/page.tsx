@@ -45,7 +45,7 @@ export default function TeenGamesPage() {
           imageSrc="/tower.png" 
           bgColor="bg-[#E1F5FE]" 
           btnColor="bg-[#40BCFF]"
-          href="/TowerOfHanoi"
+          href="/TowerofHanoi"
         />
 
       </main>
