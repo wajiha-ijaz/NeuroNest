@@ -34,7 +34,7 @@ export default function Navbar() {
         <div className="w-[500px] flex justify-between font-roboto font-bold uppercase text-lg tracking-widest text-[20px]">
           <Link href="/home" className="no-underline text-[#000000] px-4 py-2 rounded hover:text-white transition-colors">Home</Link>
           <Link href="/kids" className="no-underline text-[#000000] px-4 py-2 rounded hover:text-white transition-colors">Activities</Link>
-          <Link href="/dashboard" className="no-underline text-[#000000] px-4 py-2 rounded hover:text-white transition-colors">Dashboard</Link>
+          <Link href="/Dashboard" className="no-underline text-[#000000] px-4 py-2 rounded hover:text-white transition-colors">Dashboard</Link>
         </div>
 
         <div className="w-16 h-16 bg-white/40 rounded-full border-2 border-white" />

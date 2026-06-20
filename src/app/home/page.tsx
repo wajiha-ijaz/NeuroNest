@@ -3,11 +3,12 @@ import Link from "next/link";
 
 export default function HomePage() {
   return (
-    // Changed: Added min-h-screen and flex-col to the main wrapper
-    <div className="flex flex-col min-h-screen bg-white">
+    // overflow-hidden lagane se browser ka extra space aur accidental scrollbars gayab ho jayenge
+    <div className="flex flex-col min-h-screen bg-white overflow-x-hidden overflow-y-auto style={{ scrollbarWidth: 'none' }}">
       
-      {/* 1. HERO SECTION */}
-      <section className="w-[1440px] relative h-[700px] overflow-hidden mx-auto flex-shrink-0">
+      {/* 1. HERO SECTION: TEXT & IMAGE */}
+      {/* Scrollbar hatane ke liye isko w-full kiya aur max-w-[1440px] se center kiya */}
+      <section className="w-full max-w-[1440px] relative h-[500px] overflow-hidden mx-auto flex-shrink-0">
         <div className="absolute inset-0 w-full h-full">
           <Image
             src="/rec.png"
@@ -18,71 +19,103 @@ export default function HomePage() {
           />
         </div>
 
-        <div className="mt-[54px] ml-[54px] relative z-10 flex flex-col pt-32 pl-32 max-w-[1000px]">
-          <h1 className="text-[85px] font-extrabold text-[#333] leading-[1.1] font-playpen">
+        <div className="mt-[34px] ml-[54px] relative z-10 flex flex-col pt-32 pl-32 max-w-[1000px]">
+          <h1 className="text-[65px] font-extrabold text-[#333] leading-[1.1] font-playpen">
             Why Fit In? When <br />
             You Are Born To
           </h1>
-          <span className="text-[110px] text-[#F6A572] font-playpen italic mt-[-10px] ml-2">
+          <span className="text-[85px] text-[#F6A572] font-playpen italic mt-[-10px] ml-2">
             Stand Out.
           </span>
         </div>
       </section>
 
-      {/* 2. GET STARTED SECTION */}
-      {/* Added flex-grow here: This pushes the footer down by filling empty space */}
-      <section className="w-full bg-white flex flex-col items-center py-20 flex-grow">
-        <h2 className="mt-[30px] text-[40px] font-bold text-black mb-16 font-playpen">
+      {/* 2. GET STARTED SECTION: HORIZONTAL CARDS WITH REPLICATED GAMECARD STYLE */}
+      <section className="w-full bg-white flex flex-col items-center py-16 flex-grow overflow-hidden">
+        <h2 className="mt-[10px] text-[28px] font-bold text-black mb-12 font-playpen">
           Lets get started with NeuroNest!
         </h2>
 
-        <div className="flex gap-[50px] justify-center items-center">
+        {/* Cards Wrapper */}
+        <div className="w-full flex flex-wrap items-center justify-center gap-8 pb-12 px-6">
           
-          {/* Card 1 */}
-          <div className="mt-[70px] w-[450px] h-[600px] bg-[#F2D75D] rounded-[30px] p-10 flex flex-col items-center text-center shadow-[0px_10px_30px_rgba(0,0,0,0.05)]">
-            <div className="mt-[40px] w-[300px] h-[300px] bg-white rounded-full relative mb-8 overflow-hidden flex items-center justify-center border border-gray-10 flex-shrink-0">
-              <Image src="/sa.png" alt="Icon" width={300} height={300} className="object-cover" />
+          {/* Card 1 - Interactive Activities */}
+          <div className="mt-[10px] bg-[#F2D75D] w-[300px] h-[350px] rounded-[48px] p-6 shadow-[12px_12px_0px_0px_rgba(0,0,0,0.15)] border border-white/40 flex flex-col items-center text-center transition-all hover:-translate-y-2 mx-[20px]">
+            
+           {/* White Square Image Container */}
+            <div className="bg-white w-[180px] h-[180px] rounded-[100px] flex items-center justify-center relative overflow-hidden p-10 shadow-inner m-[20px] flex-shrink-0">
+              <div className="relative w-full h-full">
+                <Image 
+                  src="/acttt.avif" 
+                  alt="Progress Dashboard" 
+                  fill
+                  className="object-contain"
+                  priority 
+                />
+              </div>
             </div>
-
-            <div className="flex flex-col items-center justify-center flex-grow">
-              <h3 className="text-[40px] font-bold mb-4 font-playpen text-gray-800 leading-tight">Interactive Activities</h3>
-              <p className="max-w-[300px] text-gray-600 text-[24px] leading-snug font-playpen">
+            
+            {/* Text Section */}
+            <div className="flex flex-col items-center flex-1 justify-center py-2">
+              <h3 className="text-[24px] md:text-[28px] font-black text-black mb-1 font-playpen leading-tight">
+                Interactive Activities
+              </h3>
+              <p className="text-[13px] md:text-[14px] text-gray-500 font-semibold leading-snug max-w-[280px] px-2">
                 Age-appropriate games and tools for all developmental stages.
               </p>
             </div>
-            {/* Link to Kids Page */}
-          <Link href="/kids" className="no-underline">
-            <button className="bg-[#00AD42] hover:bg-[#008f37] text-[#f8f7f6] font-bold w-[350px] h-[50px] rounded-[30px] flex items-center justify-center text-[20px] uppercase tracking-widest transition-all shadow-lg active:scale-95 mb-[30px]">
-              Explore Activities
-            </button>
-          </Link>
-        </div> {/* Closes Card 1 */}
 
-        {/* Card 2 */}
-        <div className="mt-[70px] w-[450px] h-[600px] bg-[#AFF695] rounded-[30px] p-10 flex flex-col items-center text-center shadow-[0px_10px_30px_rgba(0,0,0,0.05)]">
-          <div className="mt-[40px] w-[300px] h-[300px] bg-white rounded-full relative mb-8 overflow-hidden flex items-center justify-center border border-gray-100 flex-shrink-0">
-            <Image src="/123.png" alt="Icon" width={350} height={350} className="object-contain" />
+            {/* Button */}
+            <Link href="/kids" className="no-underline">
+              <button 
+                className="bg-[#00AD42] hover:bg-[#B45309] text-[#f8f7f6] font-bold w-[260px] h-[40px] rounded-[30px] flex items-center justify-center text-2xl uppercase tracking-widest border-none transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95 mb-[30px] ml-[10px] mt-[10px]"
+              >
+                EXPLORE ACITIVITIES
+              </button>
+            </Link>
           </div>
 
-          <div className="flex flex-col items-center justify-center flex-grow">
-            <h3 className="text-[40px] font-bold mb-4 font-playpen text-gray-800 leading-tight">Progress Dashboard</h3>
-            <p className="max-w-[300px] text-gray-600 text-[24px] leading-snug font-playpen">
-              Track development and monitor activity engagement.
-            </p>
+          {/* Card 2 - Progress Dashboard */}
+          <div className="mt-[10px] bg-[#AFF695] w-[300px] h-[350px] rounded-[48px] p-6 shadow-[12px_12px_0px_0px_rgba(0,0,0,0.15)] border border-white/40 flex flex-col items-center text-center transition-all hover:-translate-y-2 mx-[20px]">
+            
+            {/* White Square Image Container */}
+            <div className="bg-white w-[180px] h-[180px] rounded-[100px] flex items-center justify-center relative overflow-hidden p-10 shadow-inner m-[20px] flex-shrink-0">
+              <div className="relative w-full h-full">
+                <Image 
+                  src="/bar.webp" 
+                  alt="Progress Dashboard" 
+                  fill
+                  className="object-contain"
+                  priority 
+                />
+              </div>
+            </div>
+            
+            {/* Text Section */}
+            <div className="flex flex-col items-center flex-1 justify-center py-2">
+              <h3 className="text-[24px] md:text-[28px] font-black text-black mb-1 font-playpen leading-tight">
+                Progress Dashboard
+              </h3>
+              <p className="text-[13px] md:text-[14px] text-gray-500 font-semibold leading-snug max-w-[280px] px-2">
+                Track development and monitor activity engagement.
+              </p>
+            </div>
+
+            {/* Button */}
+            <Link href="/Dashboard" className="no-underline">
+              <button 
+                className="bg-[#00AD42] hover:bg-[#B45309] text-[#f8f7f6] font-bold w-[260px] h-[40px] rounded-[30px] flex items-center justify-center text-2xl uppercase tracking-widest border-none transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95 mb-[30px]"
+              >
+                VIEW PROGRESS
+              </button>
+            </Link>
           </div>
 
-          {/* Link to Kids Page */}
-          <Link href="/kids" className="no-underline">
-            <button className="bg-[#00AD42] hover:bg-[#008f37] text-[#f8f7f6] font-bold w-[350px] h-[50px] rounded-[30px] flex items-center justify-center text-[20px] uppercase tracking-widest transition-all shadow-lg active:scale-95 mb-[30px]">
-              View Progress
-            </button>
-          </Link>
-        </div> {/* Closes Card 2 */}
-      </div> {/* Closes the flex container holding both cards */}
-    </section> {/* Closes the section wrapper */}
+        </div>
+      </section> 
 
-    {/* 3. FOOTER */}
-    <footer className="bg-[#F6A572] w-full h-[150px] flex-shrink-0 mt-[150px]" />
-  </div>
-);
+      {/* 3. BOTTOM ORANGE BAR */}
+      <footer className="bg-[#F6A572] w-full h-[8vh] min-h-[60px] max-h-[100px] flex-shrink-0 mt-[30px]" />
+    </div>
+  );
 }

@@ -3,37 +3,37 @@ import Link from 'next/link';
 
 export default function TeenGamesPage() {
   return (
-    // Main Container centered with exact 1440px width
-    <div className="w-[1440px] h-[1000px] mx-auto min-h-screen bg-white font-sans flex flex-col items-center">
-      
+    // 1. Pure container ko 100vh par bound kiya aur flex column se elements distribute kiye
+    <div className="w-full h-screen bg-white font-sans flex flex-col justify-between overflow-hidden relative">
 
-      {/* 2. TEXT BELOW NAV */}
-      <header className="text-center pt-12 pb-10 mr-[150px] m-[10px]">
-        <h1 className="text-[38px]  m-[35px] text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
+      {/* 2. TEXT BELOW NAV - Gaps and margins handled cleanly without breaking alignment */}
+      <header className="w-full text-center flex flex-col items-center justify-center pt-[3vh] pb-[1vh]">
+        <h1 className="text-[34px] md:text-[38px] font-extrabold text-gray-900 tracking-tight leading-none mb-2">
           Interactive Activities
         </h1>
-        <p className="text-gray-600 text-[24px] text-xl font-roboto -m-[30px]">
+        <p className="text-gray-600 text-[18px] md:text-[22px] font-roboto">
           Choose activities based on age group and developmental needs.
         </p>
       </header>
 
-     {/* 3. LIGHT GREY BANNER */}
-      <section className="bg-[#E5E7EB] w-full h-[70px] py-6 text-center m6 mr-[160px] m-[35px]">
-        <h2 className="text-[30px] text-4xl font-bold text-gray-800 font-roboto m-[15px]">
+      {/* 3. LIGHT GREY BANNER - Kept original style but scaled with viewport */}
+      <section className="bg-[#E5E7EB] w-full h-[8vh] min-h-[50px] max-h-[70px] flex items-center justify-center text-center">
+        <h2 className="text-[26px] md:text-[30px] font-bold text-gray-800 font-roboto">
           Kids Animations
         </h2>
       </section>
 
-      {/* 4. GAME GRID - Exact 139px gap */}
-      <main className="flex justify-center gap-[80px] pb-24 m-[100px] -ml-[100px]">
+{/* 4. GAME GRID - Cleaned layout with settings applied */}
+      <main className="w-full flex flex-wrap items-center justify-center gap-8 pb-24 px-6">
         
         {/* Card 1 */}
         <GameCard 
           title="Dress up"
-          description="Follow step-by-step guidance to put on clothes in the right order and develop independence."
+          description="Follow  the steps to put on clothes in the right order and develop independence."
           imageSrc="/boy.jpeg" 
           bgColor="bg-[#FFFDE7]" 
           btnColor="bg-[#FFD54F]"
+          btnText="PRACTICE NOW"
           href="/animation1"
         />
 
@@ -44,24 +44,23 @@ export default function TeenGamesPage() {
           imageSrc="/girll.jpeg" 
           bgColor="bg-[#E1F5FE]" 
           btnColor="bg-[#40BCFF]"
+          btnText="PRACTICE NOW"
           href="/animation2"
         />
 
       </main>
 
-      {/* 5. BOTTOM ORANGE BAR */}
-      <footer className="bg-[#F6A572] w-full h-[120px] mt-auto" />
-    </div>
-  );
+ {/* 5. BOTTOM ORANGE BAR */}
+<footer className="bg-[#F6A572] w-full h-[6vh] min-h-[50px]" />
+</div>
+);
 }
-
-function GameCard({ title, description, imageSrc, bgColor, btnColor, href }: any) {
+function GameCard({ title, description, imageSrc, bgColor, btnColor, btnText, href }: any) {
   return (
-    // Card Box: Exact 538x734
-    <article className={`${bgColor} w-[450px] h-[550px] rounded-[48px] p-12 shadow-[12px_12px_0px_0px_rgba(0,0,0,0.15)] border border-white/40 flex flex-col items-center text-center transition-all hover:-translate-y-2 -mt-[70px]`}>
+    <article className={`${bgColor} w-[300px] h-[350px] rounded-[48px] p-12 shadow-[12px_12px_0px_0px_rgba(0,0,0,0.15)] border border-white/40 flex flex-col text-center transition-all hover:-translate-y-2 mr-[20px] ml-[20px]`}>
       
       {/* White Image Container */}
-      <div className="bg-white w-[350px] h-[350px] rounded-[36px] mb-8 flex items-center justify-center relative overflow-hidden shadow-inner m-[39px]">
+      <div className="bg-white w-[250px] h-[250px] rounded-[36px] flex items-center justify-center relative overflow-hidden p-10 shadow-inner m-[20px]">
         <div className="relative w-full h-full">
           <Image 
             src={imageSrc} 
@@ -73,34 +72,36 @@ function GameCard({ title, description, imageSrc, bgColor, btnColor, href }: any
         </div>
       </div>
       
-      {/* Text */}
-      <h3 className="text-[32px] font-extrabold text-black mb-4 font-playpen -m-[10px]">
-        {title}
-      </h3>
-      <p className="text-[18px] text-gray-700 font-semibold text-lg leading-relaxed mb-10 flex-grow px-4 mt-[15px]">
-        {description}
-      </p>
-      
-      {/* Updated Button Section */}
-        <Link href={href || '/'} className="no-underline">
+      {/* Text Section */}
+      <div className="flex flex-col items-center flex-1 justify-center py-2">
+        <h3 className="text-[24px] md:text-[28px] font-black text-black mb-1 font-playpen leading-tight">
+          {title}
+        </h3>
+        <p className="text-[13px] md:text-[14px] text-gray-500 font-semibold leading-snug max-w-[280px] px-2">
+          {description}
+        </p>
+      </div>
+
+      {/* Link section with dynamic text */}
+      <Link href={href || "#"} className="no-underline">
         <button 
-        className={`
-          ${btnColor} 
-          hover:bg-[#B45309] 
-          text-[#f8f7f6] 
-          font-bold
-          w-[380px] h-[50px] 
-          rounded-[30px]
-          flex items-center justify-center
-          text-2xl uppercase tracking-widest 
-          border-none transition-all duration-300 
-          shadow-lg hover:shadow-xl active:scale-95
-          mb-[30px]
-          mt-[10px]
-          
-        `}
-      >
-        PRACTICE NOW
+          className={`
+            ${btnColor} 
+            hover:bg-[#B45309] 
+            text-[#f8f7f6] 
+            font-bold
+            w-[250px] h-[40px] 
+            rounded-[30px]
+            flex items-center justify-center
+            text-2xl uppercase tracking-widest 
+            border-none transition-all duration-300 
+            shadow-lg hover:shadow-xl active:scale-95
+            mb-[30px] 
+            ml-[30px]
+            mt-[10px]
+          `}
+        >
+          {btnText || "PLAY NOW"}
         </button>
       </Link>
     </article>

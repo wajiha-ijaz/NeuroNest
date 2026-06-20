@@ -1,42 +1,42 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function AdultActivitiesPage() {
+export default function TeenGamesPage() {
   return (
-       // Main Container centered with exact 1440px width
-    <div className="w-[1440px] h-[1000px] mx-auto min-h-screen bg-white font-sans flex flex-col items-center">
-      
+    // Pure container ko 100vh par bound kiya taake baghair scroll ke 1 time screen pe show ho
+    <div className="w-full h-screen bg-white font-sans flex flex-col justify-between overflow-hidden relative">
 
-      {/* 2. TEXT BELOW NAV */}
-      <header className="text-center pt-12 pb-10 mr-[150px] m-[10px]">
-        <h1 className="text-[38px]  m-[35px] text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
+      {/* 2. HEADER SECTION (TEXT BELOW NAV) */}
+      <header className="w-full text-center flex flex-col items-center justify-center pt-[2vh] pb-[1vh]">
+        <h1 className="text-[32px] md:text-[36px] font-extrabold text-gray-900 tracking-tight leading-none mb-1">
           Interactive Activities
         </h1>
-        <p className="text-gray-600 text-[24px] text-xl font-roboto -m-[30px]">
+        <p className="text-gray-600 text-[16px] md:text-[18px] font-medium">
           Choose activities based on age group and developmental needs.
         </p>
       </header>
-     
-{/* 3. SEGMENTED TOGGLE BAR (Figma Exact: 811x111) */}
-<section className="flex justify-center mb-16">
-  <div className="flex items-center justify-between px-6 bg-white border-[3px] border-gray-300 rounded-[55px] w-[800px] h-[90px] shadow-[0px_4px_10px_rgba(0,0,0,0.1)] mr-[170px] m-[30px]">
-         {/* Kids Button - Links to Kids Games */}
+
+{/* 3. SEGMENTED TOGGLE BAR */}
+      <section className="w-full flex justify-center my-[1vh]">
+        <div className="flex items-center justify-between px-4 bg-white border-[2px] border-gray-200 rounded-[55px] w-full max-w-[700px] h-[10vh] min-h-[55px] max-h-[75px] shadow-[0px_4px_12px_rgba(0,0,0,0.05)]">
+    
+    {/* Kids Button - Links to /kids-games */}
     <Link href="/kids" className="no-underline">
-      <button className="ml-[30px] w-[218px] h-[65px] bg-transparent text-gray-500 font-bold text-[22px] rounded-[40px] hover:text-black hover:bg-gray-50 transition-all flex items-center justify-center">
+      <button className="ml-[30px] w-[160px] h-[40px] bg-transparent  text-black font-bold text-[16px] rounded-[40px] shadow-[0px_4px_8px_rgba(0,0,0,0.15)] transition-all flex items-center justify-center">
         Kids (3-12)
       </button>
     </Link>
     
-    {/* Teens Button - Links to Teen Games (Active State) */}
+    {/* Teens Button - Links to /teen-games */}
     <Link href="/teens" className="no-underline">
-      <button className="w-[218px] h-[65px] bg-transparent text-black font-bold text-[22px] rounded-[40px] shadow-[0px_4px_8px_rgba(0,0,0,0.15)] transition-all flex items-center justify-center">
+      <button className="w-[160px] h-[40px] bg-transparent text-gray-500 font-bold text-[16px] rounded-[40px] hover:text-black hover:bg-gray-50 transition-all flex items-center justify-center">
         Teens (13-17)
       </button>
     </Link>
     
-    {/* Adults Button - Blank link for now */}
+    {/* Adults Button - Blank link (#) for now */}
     <Link href="/adults" className="no-underline">
-      <button className="mr-[30px] w-[218px] h-[65px] bg-[#87D1FF] text-gray-500 font-bold text-[22px] rounded-[40px] hover:text-black hover:bg-gray-50 transition-all flex items-center justify-center">
+      <button className="mr-[30px] w-[160px] h-[40px] bg-[#87D1FF] text-gray-500 font-bold text-[16px] rounded-[40px] hover:text-black hover:bg-gray-50 transition-all flex items-center justify-center">
         Adults (18+)
       </button>
     </Link>
@@ -44,93 +44,85 @@ export default function AdultActivitiesPage() {
   </div>
 </section>
 
+{/* 4. GAME GRID - Balanced and Centered (Populated with Activity Data) */}
+<main className="w-full flex-1 max-h-[62vh] flex items-center justify-center gap-8 px-6 my-[1vh]">
+  
+  {/* Card 1: Breathing Buddy */}
+  <GameCard 
+    title="Breathing Buddy"
+    description="Calming guided exercises to manage stress and anxiety."
+    bgColor="bg-white" 
+    imageSrc="/a1.avif" 
+    btnColor="bg-[#AFE879]"
+    btnText="START PRACTICE"
+    href="/breathingbuddy"
+  />
 
-{/* 4. ACTIVITY GRID - Fixed Syntax Here */}
-      <main className="w-full flex flex-col items-center pb-24 mr-[150px] mt-[70px]">
-        {/* Container for cards using flex-wrap to handle the 3rd card centering */}
-        <div className="flex flex-wrap justify-center gap-[40px] max-w-[1200px]">
-          
-          <ActivityCard 
-            title="Breathing Buddy"
-            description="Calming guided exercises to manage stress and anxiety."
-            imageSrc="/a1.avif" 
-            btnText="START PRACTICE"
-            btnColor="bg-[#AFE879]"
-            href="/breathing-buddy"
-          />
+  {/* Card 2: Daily Flow */}
+  <GameCard 
+    title="Daily Flow"
+    description="Master your routine with intelligent task management and personalized reminders."
+    imageSrc="/a2.avif" 
+    bgColor="bg-white" 
+    btnColor="bg-[#C499F3]"
+    btnText="START PRACTICE"
+    href="/dailyflow"
+  />
+</main>
 
-          <ActivityCard 
-            title="Routine Reminder"
-            description="Stay organized with personalized daily schedules and alerts."
-            imageSrc="/a2.avif" 
-            btnText="START PRACTICE"
-            btnColor="bg-[#C499F3]"
-            href="/routine-reminder"
-          />
+{/* 5. BOTTOM ORANGE BAR */}
+<footer className="bg-[#F6A572] w-full h-[6vh] min-h-[50px]" />
+</div>
+);
+}
 
-          {/* This card will wrap to the second row and center because of 'justify-center' */}
-          <ActivityCard 
-            title="Task Manager"
-            description="Break down complex workplace tasks into manageable steps."
-            imageSrc="/a22.avif" 
-            btnText="START NOW"
-            btnColor="bg-[#F6A572]"
-            href="/task-manager"
-          />
-        </div>
-      </main>
-            {/* 5. BOTTOM ORANGE BAR */}
-            <footer className="bg-[#F6A572] w-full h-[120px] mt-auto" />
-          </div>
-        );
-      }
-  function ActivityCard({ title, description, imageSrc, btnText, btnColor, href }: any) {
+function GameCard({ title, description, imageSrc, bgColor, btnColor, btnText, href }: any) {
   return (
-    <article className="-mt-[25px] w-[500px] h-[250px] bg-white rounded-[25px] p-6 border border-gray-200 shadow-[8px_8px_0px_rgba(0,0,0,0.1)] flex flex-col">
+    <article className={`${bgColor} w-[300px] h-[350px] rounded-[48px] p-12 shadow-[12px_12px_0px_0px_rgba(0,0,0,0.15)] border border-white/40 flex flex-col text-center transition-all hover:-translate-y-2 mr-[20px] ml-[20px]`}>
       
-      {/* Top Section: Horizontal Image + Text */}
-      <div className="mt-[10px] flex items-center gap-6 mb-8">
-        {/* Rounded Image Wrapper */}
-        <div className=" w-[120px] h-[120px] relative flex-shrink-0 rounded-full overflow-hidden mt-[10px] ml-[22px]">
+      {/* White Image Container */}
+      <div className="bg-white w-[250px] h-[250px] rounded-[36px] flex items-center justify-center relative overflow-hidden p-10 shadow-inner m-[20px]">
+        <div className="relative w-full h-full">
           <Image 
             src={imageSrc} 
             alt={title} 
-            fill 
+            fill
             className="object-contain"
+            priority 
           />
         </div>
-
-        {/* Text Column */}
-        <div className="text-left">
-          <h3 className="text-[38px] ml-[22px] font-extrabold text-black font-playpen leading-tight">
-            {title}
-          </h3>
-          <p className="text-[23px] ml-[22px] text-gray-500 font-medium leading-snug mt-1">
-            {description}
-          </p>
-        </div>
+      </div>
+      
+      {/* Text Section */}
+      <div className="flex flex-col items-center flex-1 justify-center py-2">
+        <h3 className="text-[24px] md:text-[28px] font-black text-black mb-1 font-playpen leading-tight">
+          {title}
+        </h3>
+        <p className="text-[13px] md:text-[14px] text-gray-500 font-semibold leading-snug max-w-[280px] px-2">
+          {description}
+        </p>
       </div>
 
-       {/* Updated Button Section */}
-      <Link href={href || '/'} className="no-underline">
+      {/* Link section with dynamic text */}
+      <Link href={href || "#"} className="no-underline">
         <button 
           className={`
             ${btnColor} 
             hover:bg-[#B45309] 
             text-[#f8f7f6] 
             font-bold
-            w-[420px] h-[50px] 
+            w-[250px] h-[40px] 
             rounded-[30px]
             flex items-center justify-center
             text-2xl uppercase tracking-widest 
             border-none transition-all duration-300 
             shadow-lg hover:shadow-xl active:scale-95
-            mb-[30px]
-            ml-[58px]
-            mt-[30px]
+            mb-[30px] 
+            ml-[30px]
+            mt-[10px]
           `}
         >
-          {btnText}
+          {btnText || "PLAY NOW"}
         </button>
       </Link>
     </article>
